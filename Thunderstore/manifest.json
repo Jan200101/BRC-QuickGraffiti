@@ -1,0 +1,9 @@
+{
+    "name": "QuickGraffiti",
+    "version_number": "0.1.0",
+    "website_url": "https://github.com/Jan200101/BRC-QuickGraffiti",
+    "description": "Removes the Graffiti Minigame.",
+    "dependencies": [
+        "BepInEx-BepInExPack-5.4.2100"
+    ]
+}
