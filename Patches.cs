@@ -61,7 +61,8 @@ namespace QuickGraffiti
                     MethodInfo paintMethod = gSpot.GetType().GetMethod("Paint", BindingFlags.NonPublic | BindingFlags.Instance);
                     paintMethod.Invoke(gSpot, new object[] { Crew.PLAYERS, grafArt, null });
 
-                    gSpot.GiveRep();
+                    bool oldBottomWasClaimedByPlayableCrew = gSpot.bottomCrew == Crew.PLAYERS || gSpot.bottomCrew == Crew.ROGUE;
+                    gSpot.GiveRep(noRepPickup: false, oldBottomWasClaimedByPlayableCrew);
 
                     MethodInfo SetStateVisualMethod = __instance.GetType().GetMethod("SetStateVisual", BindingFlags.NonPublic | BindingFlags.Instance);
                     SetStateVisualMethod.Invoke(__instance, new object[] { setState });
